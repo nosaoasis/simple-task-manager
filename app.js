@@ -3,6 +3,7 @@ const app = express();
 
 const tasks = require("./routes/tasks");
 const errorPage = require('./middleware/error')
+const errorHandlerMiddleware = require('./middleware/error_handler')
 const connectDB = require("./db/connect");
 require("dotenv").config();
 
@@ -12,6 +13,7 @@ app.use(express.static("./public"));
 
 app.use("/api/v1/tasks", tasks);
 app.use("*", errorPage)
+app.use(errorHandlerMiddleware)
 
 const PORT = process.env.PORT || 3000;
 
