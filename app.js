@@ -8,9 +8,6 @@ require("dotenv").config();
 app.use(express.json());
 app.use(express.static("./public"));
 
-app.get("/hello", (req, res) => {
-  res.send("hello from hello");
-});
 
 app.use("/api/v1/tasks", tasks);
 

@@ -13,8 +13,11 @@ mongoose
   .catch(err => console.log(err));
 */
 
-const connectDB = url => {
-  return mongoose.connect(url);
+const connectDB = (url) => {
+  return mongoose.connect(url, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
 };
 
 // mongoose
