@@ -13,6 +13,11 @@ mongoose
   .catch(err => console.log(err));
 */
 
+
+// MODEL VIEW CONTROLLER
+
+
+
 const connectDB = (url) => {
   return mongoose.connect(url, {
     useNewUrlParser: true,
